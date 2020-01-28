@@ -10,12 +10,12 @@
           <div :class="{close_nav: showNav}" class="ham_item"></div>
       </button>
       <transition name="fade">
-      <ul class="items_wrapper" v-if="showNav">
-          <li class="single-link"><a class="link">Home</a></li>
-          <li class="single-link"><a class="link">O firmie</a></li>
-          <li class="single-link"><a class="link">Realizacje</a></li>
-          <li class="single-link"><a class="link">Oferta</a></li>
-          <li class="single-link"><a class="link">Kontakt</a></li>
+      <ul class="items_wrapper" v-show="showNav">
+          <li class="single_link"><a class="link">Home</a></li>
+          <li class="single_link"><a class="link">O firmie</a></li>
+          <li class="single_link"><a class="link">Realizacje</a></li>
+          <li class="single_link"><a class="link">Oferta</a></li>
+          <li class="single_link"><a class="link">Kontakt</a></li>
       </ul>
       </transition>
   </nav>
@@ -28,11 +28,11 @@ export default {
         return{
             showNav: false
         }
-    }
+    },
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .main_nav_container{
     width: 100%;
     position: absolute;
@@ -101,5 +101,40 @@ export default {
 }
 .close_nav:nth-child(2){
     transform: rotate(-45deg) translate(5px);
+}
+@media (min-width:1440px){
+   .main_nav_container{
+        padding: 32px 100px;
+   }
+   .logo_big{
+       font-size: 32px;
+   }
+   .logo_small{
+       font-size: 16px;
+   }
+   .logo_big, .logo_small{
+       color: black;
+   }
+    .hamburger_button{
+        display: none;
+   }
+    .items_wrapper{
+        display: flex !important;
+        position: relative;
+        height: auto;
+        width: auto;
+        flex-direction: row;
+        background: none;
+        .single_link{
+            margin: 0 24px;
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+        .link{
+            color: black;
+            font-size: 15px;
+        }
+    }
 }
 </style>

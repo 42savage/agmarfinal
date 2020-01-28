@@ -2,17 +2,20 @@
   <div class="home_container">
     <Navigation/>
     <Slider/>
+    <Test/>
   </div>
 </template>
 
 <script>
 import Navigation from '../components/navigation.vue';
 import Slider from '../components/slider.vue';
+import Test from '../components/test.vue';
 export default {
   name: 'home',
   components: {
     Navigation,
-    Slider
+    Slider,
+    Test
   },
 }
 </script>

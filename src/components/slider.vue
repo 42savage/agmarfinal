@@ -7,6 +7,7 @@
   :items="1" 
   :dotsContainer="'.dotsContainer'" 
   :nav="true"
+  @changed="changed"
   :navContainer="'.navContainer'"
   :navText="['KONTAKT', 'OFERTA']"
 >
@@ -26,13 +27,23 @@ import carousel from 'vue-owl-carousel'
 export default {
     name: 'Slider',
     components: { carousel },
+    data(){
+      return{
+        page: 0,
+      }
+    },
     computed:{
     ...mapState({
         images: state => state.firebase_images.carouselImages,
     })
   },
   methods:{
-    ...mapMutations(['bindImages'])
+    ...mapMutations(['bindImages']),
+    changed(data){
+      this.page = data.page.index;
+      // console.log(data)
+      data.relatedTarget.settings.navText[0] = 'test';
+    },
   },
   mounted(){
     this.bindImages();
@@ -41,13 +52,16 @@ export default {
 </script>
 
 <style lang="scss">
+.owlOverlay{
+  position: relative;
+}
 .main_carousel_container{
     width: 100%;
     height: 100vh;
 }
 .slider_item_wrapper{
     width: 100%;
-    height: 100vh;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -138,7 +152,7 @@ export default {
   width: 25px;
   height: 25px;
 }
-.owl-prev::after{
+.owl-next::after{
   content: '';
   background: url('../assets/next.png') no-repeat;
   background-size: 65%;
@@ -150,5 +164,55 @@ export default {
   top: 0;
   width: 25px;
   height: 25px;
+}
+@media (min-width:1440px){
+  .owlOverlay{
+    padding: 130px 100px 0 100px;
+    width: 100%;
+  }
+  .main_carousel_container{
+    width: 100%;
+    height: 720px;
+  }
+  .slider_item_wrapper{
+        height: 720px;
+  }
+  .first{
+    justify-content: flex-start;
+    .slider_heading{
+      margin: 0 72px;
+      font-size: 42px;
+      font-weight: lighter;
+    }
+  }
+  .second{
+    justify-content: flex-start;
+    align-items: flex-start;
+    .slider_button{
+          margin: 24px 72px;
+    }
+  }
+  .navContainer{
+    bottom: 0;
+    left: calc(100% - 200px);
+    width: 100px;
+    .owl-prev, .owl-next{
+      width: 50%;
+      color: transparent;
+      font-size: 0;
+    }
+  }
+  .dotsContainer{
+    bottom: calc(50% - 106px);
+    left: calc(100% - 140px);
+    width: auto;
+    flex-direction: column;
+  }
+  .owl-prev::before{
+    background: url('../assets/next.png') no-repeat;
+    background-size: 20px;
+    background-position: center;
+    transform: rotate(180deg);
+}
 }
 </style>
