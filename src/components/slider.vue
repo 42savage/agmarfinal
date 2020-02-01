@@ -11,10 +11,21 @@
   :navContainer="'.navContainer'"
   :navText="['KONTAKT', 'OFERTA']"
 >
-      <div class="slider_item_wrapper" v-for="img in images" :key="img.id" :style="`background-image: ${img.style}, url(${img.url})`">
-        <div class="first"><h1 class="slider_heading">{{img.heading_text}}</h1></div>
-        <div class="second"><button class="slider_button">{{img.button_text}}</button></div>
-    </div>
+      <!-- <div class="slider_item_wrapper" v-for="img in images" :key="img.id" :style="`background-image: ${img.style}, url(${img.url})`"> -->
+        <!-- <div class="first"><h1 class="slider_heading">{{img.heading_text}}</h1></div>
+        <div class="second"><button class="slider_button">{{img.button_text}}</button></div> -->
+        <div class="slider_item_wrapper" :style="{'background-image': `url(${require('@/assets/image1.jpg')})`}">
+          <div class="first"><h1 class="slider_heading">Heading text here</h1></div>
+          <div class="second"><button class="slider_button">button text</button></div>
+        </div>
+        <div class="slider_item_wrapper" :style="{'background-image': `url(${require('@/assets/image1.jpg')})`}">
+          <div class="first"><h1 class="slider_heading">Heading text here</h1></div>
+          <div class="second"><button class="slider_button">button text</button></div>
+        </div>
+        <div class="slider_item_wrapper" :style="{'background-image': `url(${require('@/assets/image1.jpg')})`}">
+          <div class="first"><h1 class="slider_heading">Heading text here</h1></div>
+          <div class="second"><button class="slider_button">button text</button></div>
+        </div>
 </carousel>
 <div class="dotsContainer"></div>
 <div class="navContainer"></div>
