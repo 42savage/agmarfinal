@@ -33,6 +33,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 .main_nav_container{
     width: 100%;
     position: absolute;
@@ -48,7 +49,7 @@ export default {
     list-style: none;
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background: rgb(7, 88, 88);
