@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import firebase_images from './modules/firebase_images';
-import realisations_best from './modules/realisations_best';
+import carousel from './modules/carousel';
+import realisations from './modules/realisations';
+import offerIcons from './modules/offerIcons';
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -12,7 +13,8 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
-    firebase_images,
-    realisations_best
+    carousel,
+    realisations,
+    offerIcons
   }
 })

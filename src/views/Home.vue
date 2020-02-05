@@ -35,7 +35,7 @@ export default {
   },
   computed:{
     ...mapState({
-      imageState: state=> state.realisations_best.imageState
+      imageState: state=> state.realisations.imageState
     })
   }
 }

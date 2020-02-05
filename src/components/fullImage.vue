@@ -18,7 +18,7 @@ export default {
     },
     computed:{
       ...mapState({
-        currentImage: state=> state.realisations_best.currentImage
+        currentImage: state=> state.realisations.currentImage
       })
     }
 }

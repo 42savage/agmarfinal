@@ -11,7 +11,7 @@ export default {
     name: 'Loading',
     computed:{
     ...mapState({
-        images: state => state.firebase_images.carouselImages,
+        images: state => state.carousel.carouselImages,
     })
   },
     mounted(){

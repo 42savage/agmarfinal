@@ -6,7 +6,7 @@
           <div class="slide" @click="showImage(best)" v-for="best in bestImages" :key="best.id" :style="`background: url(${best.url}) no-repeat center; background-size: 125%`"></div>
       </carousel>
       </div>
-      <button class="showMore">Pokaż więcej</button>
+      <router-link to="/imageGallery" tag="button" class="showMore">Pokaż więcej</router-link>
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
     computed:{
         ...mapState({
             //name: state=> state.module_name.component_state_name
-            bestImages: state=> state.realisations_best.realisationsBest,
+            bestImages: state=> state.realisations.realisationsBest,
         })
     },
     mounted(){
