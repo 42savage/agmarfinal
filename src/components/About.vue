@@ -12,22 +12,37 @@
     <infoBox contentText=" Gdy znamy wymiary zabieramy się za zamówienie potrzebnych nam materiałów i realizacje zamówienia. " contentHeader="Realizacja" :icon="require('../assets/delivery.svg')"/>
     <infoBox contentText=" Ostatni, finalny krok to dostawa i montaż zamówienia " contentHeader="Dostawa" :icon="require('../assets/deliv2.svg')"/>
     </div>
+    <h1 class="video-heading">Film przedstawiający prace systemu aventados</h1>
+    <button class="video" @click="showImage">Wideo</button>
   </div>
 </template>
 
 <script>
 import Indicator from '../components/Indicator.vue';
 import infoBox from '../components/infoBox.vue';
+import { mapActions } from 'vuex';
 export default {
     name: 'About',
     components:{
       Indicator,
       infoBox
+    },
+    methods:{
+      ...mapActions(['showImage'])
     }
 }
 </script>
 
 <style scoped lang="scss">
+.about_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.check{
+  margin-bottom: 12px;
+}
 .content{
   padding: 0 34px;
 }
@@ -36,5 +51,18 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.video-heading{
+  font-size: 22px;
+  padding: 0 34px;
+  text-align: center;
+  margin-top: 6px;
+}
+.video{
+  width: 115px;
+  height: 40px;
+  border: 2px solid black;
+  background: none;
+  margin: 12px 0;
 }
 </style>
