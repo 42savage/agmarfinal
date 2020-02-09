@@ -8,6 +8,9 @@
     <About/>
     <Realisations/>
     <Offer/>
+    <ContactUs/>
+    <Footer/>
+    <backTop/>
   </div>
 </template>
 
@@ -20,6 +23,9 @@ import Loading from '../components/Loading.vue';
 import Realisations from '../components/Realisations.vue';
 import Offer from '../components/Offer.vue';
 import fullImage from '../components/fullImage.vue';
+import ContactUs from '../components/ContactUs.vue';
+import Footer from '../components/Footer.vue';
+import backTop from '../components/backTop.vue';
 import { mapState } from 'vuex';
 export default {
   name: 'home',
@@ -31,7 +37,10 @@ export default {
     Loading,
     Realisations,
     Offer,
-    fullImage
+    fullImage,
+    ContactUs,
+    Footer,
+    backTop
   },
   computed:{
     ...mapState({

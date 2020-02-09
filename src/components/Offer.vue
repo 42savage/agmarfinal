@@ -40,6 +40,7 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin: 12px 0;
 }
 .single_category{
   width: 146px;

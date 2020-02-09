@@ -23,7 +23,6 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex';
-import { TweenMax, Expo } from "gsap";
 import carousel from 'vue-owl-carousel';
 export default {
     name: 'Slider',
@@ -48,13 +47,6 @@ export default {
   },
   mounted(){
     this.bindImages();
-    if(this.images.length == 0){
-      TweenMax.to(".animateOverlay", 1.6, {
-        delay: 1.6,
-        top: "100%",
-        ease: Expo.easeInOut
-      });
-    }
   }
 }
 </script>

@@ -21,7 +21,7 @@ export default({
             })
         },
         currImg(state, data){
-            document.body.classList.toggle('locked')
+            document.body.classList.toggle('locked');
             state.imageState = !state.imageState;
             state.currentImage = data.url;
         }

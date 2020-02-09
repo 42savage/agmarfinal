@@ -11,11 +11,11 @@
       </button>
       <transition name="fade">
       <ul class="items_wrapper" v-show="showNav">
-          <li class="single_link"><a class="link">Home</a></li>
-          <li class="single_link"><a class="link">O firmie</a></li>
-          <li class="single_link"><a class="link">Realizacje</a></li>
-          <li class="single_link"><a class="link">Oferta</a></li>
-          <li class="single_link"><a class="link">Kontakt</a></li>
+          <li class="single_link"><a v-scroll-to='".home_container"' @click="showNav = !showNav" class="link">Home</a></li>
+          <li class="single_link"><a v-scroll-to='".about_container"' @click="showNav = !showNav" class="link">O firmie</a></li>
+          <li class="single_link"><a v-scroll-to='".realistaions_container"' @click="showNav = !showNav" class="link">Realizacje</a></li>
+          <li class="single_link"><a v-scroll-to='".offer_container"' @click="showNav = !showNav" class="link">Oferta</a></li>
+          <li class="single_link"><a v-scroll-to='".contact_container"' @click="showNav = !showNav" class="link">Kontakt</a></li>
       </ul>
       </transition>
   </nav>

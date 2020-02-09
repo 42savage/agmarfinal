@@ -1,8 +1,9 @@
 <template>
   <div class="gallery_container">
     <navigation/>
-    some text here
-    <div class="grid-item" v-for="img in images" :key="img.id" ><img  :src="img.url" :alt="img.name"></div>
+    <div class="grid_container">
+      <div class="grid-item" v-for="img in images" :key="img.id" ><img  :src="img.url" :alt="img.name"></div>
+    </div>
   </div>
 </template>
 
@@ -35,6 +36,9 @@ export default {
   img{
     width: 100%;
   }
+}
+.grid_container{
+  padding-top: 100px;
 }
 .main_nav_container{
   position: fixed;

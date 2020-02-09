@@ -3,7 +3,7 @@
     <Indicator title="Kilka słów o nas" counter="01" content=" Meble AGMAR to firma z dwudziesto letnią tradycją. 
     Charakteryzuję nas specjalne podejście do klienta oraz szeroka oferta. " />
     <div class="content">
-      <h3 class="title">Proces zamówienia to kilka banalnych kroków</h3>
+      <h3 class="title_boxes">Proces zamówienia to kilka banalnych kroków</h3>
       <p class="check">Z resztą, sprawź sam</p>
     </div>
     <div class="boxes">
@@ -13,7 +13,11 @@
     <infoBox contentText=" Ostatni, finalny krok to dostawa i montaż zamówienia " contentHeader="Dostawa" :icon="require('../assets/deliv2.svg')"/>
     </div>
     <h1 class="video-heading">Film przedstawiający prace systemu aventados</h1>
-    <button class="video" @click="showImage">Wideo</button>
+    <button v-if="$mq === 'small'" class="video" @click="showImage">Wideo</button>
+    <button v-else class="video" @click="showVideo = !showVideo">Wideo</button>
+    <div v-if="showVideo">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/gh0Krs3FIl4?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
   </div>
 </template>
 
@@ -23,6 +27,11 @@ import infoBox from '../components/infoBox.vue';
 import { mapActions } from 'vuex';
 export default {
     name: 'About',
+    data(){
+      return{
+        showVideo: false
+      }
+    },
     components:{
       Indicator,
       infoBox
@@ -64,5 +73,19 @@ export default {
   border: 2px solid black;
   background: none;
   margin: 12px 0;
+}
+@media(min-width:1440px){
+  .boxes{
+    flex-direction: row;
+  }
+  .box_container{
+    margin: 96px 6px;
+  }
+  .title_boxes{
+    font-size: 32px;
+  }
+  .check{
+    font-size: 18px;
+  }
 }
 </style>

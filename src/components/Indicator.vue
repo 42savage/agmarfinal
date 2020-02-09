@@ -53,7 +53,7 @@ export default {
   content: '';
   width: 82%;
   height: 2px;
-  background: #b1b1b1;
+  background: #525252;
   position: absolute;
   bottom: -6px;
   left: 0;
@@ -64,5 +64,26 @@ export default {
   margin-top: 24px;
   padding: 0 34px;
 }
-
+@media (min-width: 1440px){
+  .indicator_container{
+    width: 100%;
+    padding: 0 100px;
+  }
+  .top_container{
+    padding: 0;
+    &::after{
+      width: 100%;
+    }
+  }
+  .title{
+    font-size: 32px;
+  }
+  .logo{
+    font-size: 18px;
+  }
+  .content{
+    padding: 0;
+    width: 400px;
+  }
+}
 </style>

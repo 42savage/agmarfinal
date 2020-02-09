@@ -1,7 +1,7 @@
 <template>
   <div class="realistaions_container">
       <Indicator title="Realizacje" counter="02" content="Do każdego zamówienia podchodzimy indywidualnie. To czyni nas lidierem wśród Skaryszewskiego rynku stolarskiego." />
-      <div class="slider_overlay" v-if="bestImages.length > 0">
+      <div class="slider_overlay" v-if="bestImages.length > 0 && $mq === 'small'">
       <carousel class="realisations_slider" :dots="false" :autoplay="true" :center="true" :items="2" :navContainer="'.nav_container'">
           <div class="slide" @click="showImage(best)" v-for="best in bestImages" :key="best.id" :style="`background: url(${best.url}) no-repeat center; background-size: 125%`"></div>
       </carousel>
